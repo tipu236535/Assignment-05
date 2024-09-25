@@ -27,12 +27,12 @@ const navbarAmountDisplay = document.getElementById("navbar-amount");
 const historyContainer = document.getElementById("history-container");
 let initialNavbarAmount = 5500;
 
-
+//  update navbar amount
 function updateNavbarAmount(amount) {
   navbarAmountDisplay.textContent = `${amount} BDT`;
 }
 
-
+//  add donation history
 function addToHistory(amount, cause) {
   const historyItem = document.createElement("div");
   historyItem.classList.add(
@@ -56,18 +56,18 @@ function addToHistory(amount, cause) {
 
   historyContainer.appendChild(historyItem);
 
-  
+  // Store history
   let storedHistory = JSON.parse(localStorage.getItem("donationHistory")) || [];
   storedHistory.push({ amount, cause, date: formattedDate });
   localStorage.setItem("donationHistory", JSON.stringify(storedHistory));
 }
 
-
+//  modal close
 function closeModal() {
   successModal.close();
 }
 
-
+// handle donation
 function handleDonation(
   donationInput,
   donationAmountDisplay,
@@ -100,7 +100,7 @@ function handleDonation(
   }
 }
 
-
+// Flood at Noakhali, Bangladesh
 
 document.getElementById("donate-btn-noakhali").addEventListener("click", () => {
   const donationInput = document.getElementById("donation-input-noakhali");
@@ -115,7 +115,7 @@ document.getElementById("donate-btn-noakhali").addEventListener("click", () => {
   );
 });
 
-
+// Flood Relief in Feni, Bangladesh
 
 document.getElementById("donate-btn-feni").addEventListener("click", () => {
   const donationInput = document.getElementById("donation-input-feni");
@@ -128,7 +128,7 @@ document.getElementById("donate-btn-feni").addEventListener("click", () => {
   );
 });
 
-
+// Aid for Injured in the Quota Movement
 
 document.getElementById("donate-btn-quota").addEventListener("click", () => {
   const donationInput = document.getElementById("donation-input-quota");
@@ -143,14 +143,14 @@ document.getElementById("donate-btn-quota").addEventListener("click", () => {
   );
 });
 
-
+// navbar and donation amounts
 document.addEventListener("DOMContentLoaded", () => {
-  
+  // Check if navbarAmount exists in localStorage; if not, set it to the initial value
   if (!localStorage.getItem("navbarAmount")) {
-    localStorage.setItem("navbarAmount", initialNavbarAmount); 
+    localStorage.setItem("navbarAmount", initialNavbarAmount); // Set initial balance
   }
 
- 
+  //  display the current navbar amount
   const storedNavbarAmount =
     parseFloat(localStorage.getItem("navbarAmount")) || initialNavbarAmount;
   updateNavbarAmount(storedNavbarAmount);
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("donationAmountQuota", 2400);
   }
 
-  
+  // Display donation amounts
   const storedDonationAmountNoakhali =
     parseFloat(localStorage.getItem("donationAmountNoakhali")) || 0;
   document.getElementById(
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "donation-amount-quota"
   ).textContent = `${storedDonationAmountQuota} BDT`;
 
- 
+  //  donation history
   const storedHistory =
     JSON.parse(localStorage.getItem("donationHistory")) || [];
   storedHistory.forEach((item) => {
