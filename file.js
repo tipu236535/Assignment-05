@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "donation-amount-quota"
   ).textContent = `${storedDonationAmountQuota} BDT`;
 
-  //  donation history
+  
   const storedHistory =
     JSON.parse(localStorage.getItem("donationHistory")) || [];
   storedHistory.forEach((item) => {
