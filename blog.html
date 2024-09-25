@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 05</title>
+  
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+   
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .lexend {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="lexend">
+    <div id="navbar"></div>
+
+  
+    <div class="w-[80%] mx-auto mt-12">
+      <h1 class="mb-5 text-2xl font-[600]">
+        Important FAQ <i class="fa-solid fa-question"></i>
+      </h1>
+      <div
+        class="collapse collapse-arrow border border-[ rgba(17, 17, 17, 0.3) ]"
+      >
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div class="collapse-title text-xl font-medium">
+          What is the Document Object Model (DOM)?
+        </div>
+        <div class="collapse-content">
+          <p>
+            The Document Object Model (DOM) is a programming interface that
+            represents the structure and content of a web page in a
+            hierarchical, tree-like format. It allows programming languages like
+            JavaScript to interact with and manipulate HTML and XML documents
+            dynamically.
+          </p>
+        </div>
+      </div>
+      <div
+        class="collapse collapse-arrow border border-[rgba(17, 17, 17, 0.3) ]"
+      >
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+          How do you select an element from the DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            To select an element from the DOM, we use JavaScript DOM methods.
+            These methods allow us to find elements based on their ID, class,
+            tag, or other attributes. Example: const element =
+            document.getElementById('elementID');
+          </p>
+        </div>
+      </div>
+      <div
+        class="collapse collapse-arrow border border-[rgba(17, 17, 17, 0.3) ]"
+      >
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+          What is event Delegation in the context of the DOM, and why it is
+          useful?
+        </div>
+        <div class="collapse-content">
+          <p>
+            Event delegation is a technique in JavaScript that allows you to
+            handle events at a higher level in the DOM, rather than directly
+            attaching event listeners to individual child elements. Instead of
+            adding separate event listeners to multiple child elements, you
+            attach a single event listener to a parent element and take
+            advantage of event bubbling to catch and handle events from its
+            children.
+          </p>
+        </div>
+      </div>
+      <div
+        class="collapse collapse-arrow border border-[rgba(17, 17, 17, 0.3) ]"
+      >
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+          How do you manipulate an elements attributes and styles using the DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            we can manipulate an element’s attributes and styles using the DOM
+            by accessing the element through JavaScript and then using various
+            properties and methods to modify it. 1. Manipulating Attributes:
+            Using getAttribute() and setAttribute():
+            getAttribute(attributeName): Retrieves the value of an attribute.
+            setAttribute(attributeName, value): Sets the value of an attribute.
+            removeAttribute(attributeName): Removes an attribute from an
+            element.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        })
+        .catch((error) => console.log("Error loading navbar:", error));
+    </script>
+  </body>
+</html>
